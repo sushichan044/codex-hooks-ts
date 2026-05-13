@@ -1,0 +1,22 @@
+allowBuilds:
+  esbuild: true
+
+catalogs:
+  dev:
+    '@arethetypeswrong/core': ^0.18.2
+    '@types/node': ^25.7.0
+    '@typescript/native-preview': 7.0.0-dev.20260512.1
+    '@virtual-live-lab/tsconfig': ^2.1.21
+    oxfmt: ^0.49.0
+    oxlint: ^1.64.0
+    oxlint-tsgolint: ^0.22.1
+    pkg-pr-new: ^0.0.71
+    publint: ^0.3.20
+    release-it: ^20.0.1
+    release-it-pnpm: ^4.6.6
+    tsdown: 0.22.0
+    typescript: ^6.0.3
+    unplugin-unused: ^0.5.7
+    vitest: ^4.1.6
+
+saveExact: true
