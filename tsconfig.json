@@ -4,6 +4,8 @@
     "module": "preserve",
     "moduleResolution": "bundler",
     "types": ["node"],
-    "erasableSyntaxOnly": true
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   }
 }

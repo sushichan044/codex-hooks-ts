@@ -40,16 +40,22 @@
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "test": "vitest --run",
-    "tidy": "pnpm run lint && pnpm run format && pnpm run test",
     "check": "pnpm run format:check && pnpm run lint:check && pnpm run test && pnpm run build",
     "build": "tsdown",
+    "sync-upstream": "pnpm run sync-upstream:fetch && pnpm run sync-upstream:generate",
+    "sync-upstream:fetch": "node scripts/upstream/fetch.ts",
+    "sync-upstream:generate": "node scripts/upstream/generate.ts",
     "pkg-pr-new": "pkg-pr-new publish --compact --comment=update --pnpm"
+  },
+  "dependencies": {
+    "valibot": "catalog:prod"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "catalog:dev",
     "@types/node": "catalog:dev",
     "@typescript/native-preview": "catalog:dev",
     "@virtual-live-lab/tsconfig": "catalog:dev",
+    "json-schema-to-typescript": "catalog:dev",
     "oxfmt": "catalog:dev",
     "oxlint": "catalog:dev",
     "oxlint-tsgolint": "catalog:dev",
@@ -58,6 +64,7 @@
     "release-it": "catalog:dev",
     "release-it-pnpm": "catalog:dev",
     "tsdown": "catalog:dev",
+    "type-fest": "catalog:dev",
     "typescript": "catalog:dev",
     "unplugin-unused": "catalog:dev",
     "vitest": "catalog:dev"

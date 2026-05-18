@@ -4,6 +4,8 @@
 
 YOU MUST CHECK `pnpm run check` passing before finishing any task.
 
+Use `pnpm run lint` for lint / type checking. `pnpm run format` for formatting. `pnpm run test` for testing.
+
 ## Project Context
 
 ### Overview
@@ -23,16 +25,3 @@ TBD
 TBD
 
 ---
-
-## Development Environment
-
-### Available Scripts
-
-```bash
-pnpm lint          # ESLint with auto-fix
-pnpm format        # oxfmt format with write
-pnpm format:check  # oxfmt format check
-pnpm typecheck     # TypeScript type checking
-pnpm test          # Run Vitest tests
-pnpm build         # Build with tsdown
-```
