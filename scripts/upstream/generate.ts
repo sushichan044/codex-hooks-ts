@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 import type { JSONSchema } from "json-schema-to-typescript";
 import { compile } from "json-schema-to-typescript";
+
 import { SCHEMA_FILE_TO_EVENT } from "../../data/upstream.ts";
 
 const __filename = fileURLToPath(import.meta.url);

@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import { SUPPORTED_SCHEMA_FILES } from "../../data/upstream.ts";
 
 const __filename = fileURLToPath(import.meta.url);

@@ -2,13 +2,19 @@
   "name": "codex-hooks-ts",
   "version": "0.0.0",
   "private": true,
-  "description": "",
-  "keywords": [],
+  "description": "Type-safe hooks for OpenAI Codex CLI, written in TypeScript.",
+  "keywords": [
+    "codex",
+    "hooks",
+    "openai",
+    "typescript",
+    "valibot"
+  ],
   "homepage": "https://github.com/sushichan044/codex-hooks-ts#readme",
   "bugs": {
     "url": "https://github.com/sushichan044/codex-hooks-ts/issues"
   },
-  "license": "",
+  "license": "MIT",
   "author": {
     "name": "sushichan044",
     "url": "https://github.com/sushichan044"
@@ -48,6 +54,7 @@
     "pkg-pr-new": "pkg-pr-new publish --compact --comment=update --pnpm"
   },
   "dependencies": {
+    "get-stdin": "catalog:prod",
     "valibot": "catalog:prod"
   },
   "devDependencies": {
