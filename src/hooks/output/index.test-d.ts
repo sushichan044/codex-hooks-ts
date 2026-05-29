@@ -13,9 +13,7 @@ type Theirs = {
 
 describe("HookOutput", () => {
   it("is a subset of the upstream wire types", () => {
-    // FIXME: upstream schema is not correctly typed.
-    // We are using string literals where possible, but some of the upstream types are too loose
-    expectTypeOf<Ours>().toExtend<Theirs>();
+    expectTypeOf<Ours>().toEqualTypeOf<Theirs>();
   });
 });
 

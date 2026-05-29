@@ -58,7 +58,7 @@ interface PreToolUseHookOutput extends CodexCommonOutput {
    *
    * @deprecated Use `hookSpecificOutput.permissionDecision` instead.
    */
-  decision?: "block";
+  decision?: "approve" | "block";
 
   hookSpecificOutput?: {
     /** Adds extra developer context without blocking the tool call. */
@@ -67,14 +67,14 @@ interface PreToolUseHookOutput extends CodexCommonOutput {
     /** Required discriminator that ties this hook-specific payload to the event. */
     hookEventName: "PreToolUse";
 
-    /**
-     * Codex currently only honors `"deny"`. `"ask"` and the legacy `"allow"` are parsed but fail
-     * open in the current release, so they are intentionally not exposed here.
-     */
-    permissionDecision?: "deny";
+    permissionDecision?: "allow" | "deny" | "ask";
 
     /** Surfaced to the model when `permissionDecision` is `"deny"`. */
     permissionDecisionReason?: string;
+
+    updatedInput?: {
+      [k: string]: unknown;
+    };
   };
 
   /**
@@ -99,6 +99,10 @@ interface PostToolUseHookOutput extends CodexCommonOutput {
 
     /** Required discriminator that ties this hook-specific payload to the event. */
     hookEventName: "PostToolUse";
+
+    updatedMCPToolOutput?: {
+      [k: string]: unknown;
+    };
   };
 
   /** Required when `decision` is `"block"` so the model knows why the tool result was rewritten. */
@@ -108,21 +112,17 @@ interface PostToolUseHookOutput extends CodexCommonOutput {
 /** @see {@link https://developers.openai.com/codex/hooks#permissionrequest} */
 interface PermissionRequestHookOutput extends CodexCommonOutput {
   hookSpecificOutput?: {
-    /**
-     * Approve, deny, or decline to decide on the pending permission request.
-     *
-     * @remarks
-     *   `updatedInput`, `updatedPermissions`, and `interrupt` are reserved for future behavior and
-     *   fail closed in the current Codex release, so they are intentionally not exposed.
-     */
-    decision:
-      | {
-          behavior: "allow";
-        }
-      | {
-          behavior: "deny";
-          message?: string;
-        };
+    decision?: {
+      behavior: "allow" | "deny";
+      interrupt?: boolean;
+      message?: string;
+      updatedInput?: {
+        [k: string]: unknown;
+      };
+      updatedPermissions?: {
+        [k: string]: unknown;
+      };
+    };
 
     /** Required discriminator that ties this hook-specific payload to the event. */
     hookEventName: "PermissionRequest";
