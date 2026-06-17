@@ -8,7 +8,7 @@ catalogs:
   dev:
     '@arethetypeswrong/core': 0.18.2
     '@types/node': 25.7.0
-    '@typescript/native-preview': 7.0.0-dev.20260512.1
+    '@typescript/native-preview': 7.0.0-dev.20260521.1
     '@virtual-live-lab/tsconfig': 2.1.21
     json-schema-to-typescript: 15.0.4
     oxfmt: 0.49.0
